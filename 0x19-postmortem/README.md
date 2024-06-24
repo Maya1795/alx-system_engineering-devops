@@ -5,7 +5,7 @@ Issue Summary
 
 o Duration: June 24, 2024, from 14:00 to 16:30 UTC
 
-o Impact: Our primary web application was unavailable to 80% of users, resulting in an inability to access the main website and services. Users experienced timeouts and 500 Internal Server Error messages.
+o Impact: 80% of our users couldn't access our primary web application. Instead of our beautiful homepage, they were greeted with the dreaded 500 Internal Server Error message. It's like inviting friends over and locking the door.
 
 o Root Cause: A misconfigured load balancer that failed to distribute traffic correctly, leading to server overload and service disruption.
 
@@ -33,11 +33,11 @@ Root Cause and Resolution
 
 Root Cause
 
-The issue was caused by an incorrect load balancer configuration. A recent update intended to optimize traffic distribution inadvertently left out several critical backend servers from the pool, causing excessive load on the remaining servers. This resulted in slow responses and ultimately server crashes due to resource exhaustion.
+The culprit was a sneaky misconfiguration in our load balancer. During a routine update meant to optimize performance, some critical backend servers were accidentally left out. This caused the remaining servers to buckle under the pressure like the last Jenga piece.
 
 Resolution
 
-The network engineering team reviewed and corrected the load balancer configuration, ensuring all backend servers were included in the traffic distribution pool. A system-wide reboot was performed to clear any residual issues. Post-fix, thorough testing confirmed that the load balancer was functioning correctly, and normal service resumed.
+Our network engineering team fixed the configuration, ensuring all servers were part of the load balancer’s traffic pool. After a system reboot to clear any lingering issues, the services returned to their usual, impeccable selves.
 
 Corrective and Preventative Measures
 
